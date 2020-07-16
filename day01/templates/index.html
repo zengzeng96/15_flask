@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>flask模板的初级简单使用</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <p>name={{ name }}</p>
+    <p>age={{age}}</p>
+    <p>my_dict:city={{my_dict["city"]}}</p>
+    <p>my_dict:city={{my_dict.city}}</p>
+    <p>my_list:{{my_list}}</p>
+    <p>my_list[my_int]={{my_list[my_int]}}</p>
+    <p>my_list[0]+my_list[1]={{my_list[0]+my_list[1]}}</p>
+    <p>{{"hello"+" python"}}</p>
+    <!-- 过滤器 -->
+    <p>a{{ "     flask world    " | trim | upper}}a</p>
+    <!-- 支持链式操作  对第一次过滤的结果进行再次过滤-->
+    <!-- 禁用转义 -->
+    <!-- 转义 -->
+    <!-- 就是将html   js 代码中的<    >  转义成   &lt;   和    &gt;    这样就不会被别人的代码攻击 -->
+    <!-- 别人写的代码就不会被执行 -->
+    <br>
+    <p>{{ my_list | li2}}</p>
+    <!-- 自定义过滤器函数的名字需要在Python文件中指定 -->
+    <p>{{ my_list | li3}}</p>
+</body>
+
+</html>

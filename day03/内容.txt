@@ -1,0 +1,18 @@
+1.数据库migrate扩展的使用简介
+2.migrate扩展的使用
+
+python book_author.py db init
+python book_author.py db migrate -m "initial migration"#添加说明信息
+python book_author.py db upgrade
+
+python book_author.py db history
+python book_author.py db downgrade 对应状态的状态码 #回退
+
+
+蓝图：
+1.循环引用
+2.蓝图的基本定义与使用
+
+单元测试：
+实现简单的单元测试
+

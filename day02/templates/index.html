@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <h1>闪现信息</h1>
+    {% for msg in get_flashed_messages() %}
+    <p>msg</p>
+    {% endfor %}
+    <!-- 定义宏 代码重用 -->
+    {% macro input()%}
+    <input type="text" value="" size="30">
+    {% endmacro %}
+    <h1>input 1</h1>
+    <!-- 调用宏 -->
+    {{ input() }}
+    <h1>input 2</h1>
+    <!-- 调用宏 -->
+    {{ input() }}
+    <br>
+    <!-- 定义带参数的宏 -->
+    {% macro input2(type,value,size)%}
+    <input type="{{type}}" value="{{value}}" size="{{size}}">
+    {% endmacro %}
+    <h1>input2</h1>
+    {{input2("password","",50)}}
+
+    <!-- 定义带默认参数的宏 -->
+    {% macro input3(type="text",value="",size=30)%}
+    <input type="{{type}}" value="{{value}}" size="{{size}}">
+    {% endmacro %}
+
+    <h1>input3</h1>
+    {{input3()}}
+
+    <hr>
+    <!-- 导入外部的宏 -->
+    <h1>input4</h1>
+    {% import "macro_input.html" as m_input %}
+    {{ m_input.input4() }}
+</body>
+
+</html>
