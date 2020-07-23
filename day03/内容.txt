@@ -8,7 +8,9 @@ python book_author.py db upgrade
 python book_author.py db history
 python book_author.py db downgrade 对应状态的状态码 #回退
 
-
+python manage.py db init
+python manage.py db migrate -m "initial migration"
+python manage.py db upgrade
 蓝图：
 1.循环引用
 2.蓝图的基本定义与使用

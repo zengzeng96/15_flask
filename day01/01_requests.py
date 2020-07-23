@@ -1,14 +1,14 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Date    : 2020-03-07 08:56:50
-# @Author  : ZENG JIA (zengjia42@126.com)
-# @Link    : https://weibo.com/5504445825/profile?topnav=1&wvr=6
 
 
-# here import the lib
-import sys
+
 import os
 import re
+# here import the lib
+import sys
+
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -27,7 +27,6 @@ def index():
     # 直接提取请求体中表单格式的数据  是一个类字典的对象
     # args记录查询字符串中的内容
     city = request.args.get("city")
-
     name = request.form.get("name")  # 获取前端严格表单发送过来的数据
     age = request.form.get("age")
     name_li = request.form.getlist("name")

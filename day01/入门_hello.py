@@ -1,9 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Date    : 2020-03-04 21:18:23
-# @Author  : ZENG JIA (zengjia42@126.com)
-# @Link    : https://weibo.com/5504445825/profile?topnav=1&wvr=6
-
 
 # here import the lib
 import sys

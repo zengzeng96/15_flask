@@ -1,8 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Date    : 2020-03-07 22:07:29
-# @Author  : ZENG JIA (zengjia42@126.com)
-# @Link    : https://weibo.com/5504445825/profile?topnav=1&wvr=6
+
 
 
 # here import the lib
@@ -47,7 +46,7 @@ def handle_after_request(response):
 @app.teardown_request
 def handle_teardown_request(response):
     """在每次请求之后   视图函数处理之后 都会被执行  无论视图函数是否出现异常都被执行"""
-    print("handle_teardown_request 被执行   工作在非调试模式下  debuig=False")
+    print("handle_teardown_request 被执行   工作在非调试模式下  debug=False")
     print(request.path)
     return response
 

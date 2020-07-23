@@ -6,19 +6,19 @@ from users import register
 from orders import app_orders
 from cart import app_cart
 
+app = Flask(__name__)
 
-app=Flask(__name__)
-
-app.route("/register")(register)
-app.route("/get_goods")(get_goods)
+app.route("/register")(register)  # 装饰器的原理
+app.route("/get_goods")(get_goods)  # 装饰器的原理
 
 # 注册蓝图
-#app.register_blueprint(app_orders)
+# app.register_blueprint(app_orders)
 
 # 在注册蓝图的时候给 url 添加前缀
-app.register_blueprint(app_orders,url_prefix="/order")
+app.register_blueprint(app_orders, url_prefix="/order")
 # /order/get_orders
-app.register_blueprint(app_cart,url_prefix="/cart")
+app.register_blueprint(app_cart, url_prefix="/cart")
+
 
 @app.route("/")
 def index():
@@ -32,6 +32,3 @@ if __name__ == '__main__':
     print(app.url_map)
     # app.run(debug=True,port=8000)
     app.run(debug=True)
-    
-    
-    
